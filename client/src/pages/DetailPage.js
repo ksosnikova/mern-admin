@@ -12,7 +12,7 @@ export const DetailPage = () => {
 
   const getProfile = useCallback(async () => {
     try {
-      const fetched = await request(`/api/profile/${profileId}`, 'GET', null)
+      const fetched = await request(`/api/profile/${profileId}`, 'GET')
       setProfile(fetched);
     } catch (error) {
     }

@@ -8,7 +8,7 @@ export const ProfileList = ({ profiles, deleteHandler }) => {
   const [id, setId] = useState(null);
 
   if (!profiles.length) {
-    return <p className='center'>Профилей нет</p>
+    return <p className='center'>No profiles</p>
   }
 
   return (
@@ -16,13 +16,13 @@ export const ProfileList = ({ profiles, deleteHandler }) => {
       <thead>
         <tr>
           <th>#</th>
-          <th>имя</th>
-          <th>пол</th>
-          <th>город</th>
-          <th>день рождения</th>
-          <th>открыть</th>
-          <th>редактировать</th>
-          <th>удалить</th>
+          <th>name</th>
+          <th>gender</th>
+          <th>city</th>
+          <th>birthday</th>
+          <th>open</th>
+          <th>edit</th>
+          <th>delete</th>
         </tr>
       </thead>
 
@@ -36,7 +36,7 @@ export const ProfileList = ({ profiles, deleteHandler }) => {
               <td>{profile.city}</td>
               <td>{profile.birthday}</td>
               <td>
-                <Link to={`/detail/${profile._id}`}>открыть</Link>
+                <Link to={`/detail/${profile._id}`}>open</Link>
               </td>
               <td>
                 <a><i className="material-icons prefix" onClick={() => setId(profile._id)}>mode_edit</i></a>

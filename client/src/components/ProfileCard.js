@@ -4,11 +4,11 @@ export const ProfileCard = ({ profile }) => {
   
   return (
     <div>
-      <h2>Профиль</h2>
-      <p>имя: {profile.name}</p>
-      <p>пол: {profile.gender}</p>
-      <p>город: {profile.city}</p>
-      <p>дата рождения: {profile.birthday}</p>
+      <h2>Profile</h2>
+      <p>Name: {profile.name}</p>
+      <p>Gender: {profile.gender}</p>
+      <p>City: {profile.city}</p>
+      <p>Birthday: {profile.birthday}</p>
     </div>
   )
 }

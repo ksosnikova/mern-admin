@@ -10,7 +10,7 @@ export const ProfilesPage = () => {
 
   const deleteHandler = async (id) => {
     try {
-      const fetched = await request(`/api/profile/${id}`, 'DELETE', null);
+      const fetched = await request(`/api/profile/${id}`, 'DELETE');
       setProfiles(profiles.filter(profile => profile._id !== fetched._id));
     } catch (error) { }
   };

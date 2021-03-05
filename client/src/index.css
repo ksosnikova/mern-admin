@@ -81,3 +81,7 @@ td a i {
   top: 10px;
   right: 10px;
 }
+
+.browser-default {
+  color: inherit;
+}

@@ -13,7 +13,7 @@ export const AdminPage = () => {
 
   const changeUserType = async (id) => {
     try {
-      const fetched = await request(`/api/admin/${id}`, 'PATCH', null, {});
+      const fetched = await request(`/api/admin/${id}`, 'PATCH');
       let newUserList = users.filter(user => user._id !== fetched._id);
       setUsers([...newUserList, fetched]);
     } catch (error) { }
@@ -21,21 +21,21 @@ export const AdminPage = () => {
 
   const deleteUser = async (id) => {
     try {
-      const fetched = await request(`/api/admin/${id}`, 'DELETE', null, {});
+      const fetched = await request(`/api/admin/${id}`, 'DELETE');
       setUsers(users.filter(user => user._id !== fetched._id));
     } catch (error) { }
   };
 
   const deleteHandler = async (id) => {
     try {
-      const fetched = await request(`/api/profile/${id}`, 'DELETE', null);
+      const fetched = await request(`/api/profile/${id}`, 'DELETE' );
       setProfiles(profiles.filter(profile => profile._id !== fetched._id));
     } catch (error) { }
   };
 
   const getAllUsers = useCallback(async () => {
     try {
-      const { usersDB, profilesDB } = await request(`/api/admin/`, 'GET', null);
+      const { usersDB, profilesDB } = await request(`/api/admin/`, 'GET');
       setUsers(usersDB);
       setProfiles(profilesDB);
     } catch (error) { }
@@ -57,10 +57,10 @@ export const AdminPage = () => {
 
   return (
     <>
-      <h4>Всего пользователей: {users.length}</h4>
+      <h4>Total users: {users.length}</h4>
       {!loading && <UserList profiles={profiles} users={users} deleteUser={deleteUser} changeUserType={changeUserType} />}
-      <h4>Всего профилей: {profiles.length}</h4>
-      <p>Профилей старше 18 лет: {adultsProfiles()}</p>
+      <h4>Total profiles: {profiles.length}</h4>
+      <p>Profiles over 18 years old: {adultsProfiles()}</p>
       {!loading && <ProfileList profiles={profiles} users={users} deleteHandler={deleteHandler} />}
     </>
   )

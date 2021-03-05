@@ -64,7 +64,7 @@ export const Form = ({ profile, isEdit }) => {
     <>
       <div className='input-field col s8 offset-s2'>
         <input
-          placeholder='Введите имя'
+          placeholder='Your name'
           id='name'
           type='text'
           name='name'
@@ -72,11 +72,11 @@ export const Form = ({ profile, isEdit }) => {
           onChange={changeHandler}
           disabled={loading}
         />
-        <label htmlFor='name'>Введите имя</label>
+        <label htmlFor='name'>Enter name</label>
       </div>
 
       <div className="search-input-field col s8 offset-s2">
-        <label htmlFor='gender'>Пол</label>
+        <label htmlFor='gender'>Gender</label>
         <div>
           <select
             className="browser-default"
@@ -84,16 +84,16 @@ export const Form = ({ profile, isEdit }) => {
             name='gender'
             value={form.gender}
             onChange={changeHandler}>
-            <option value="" disabled id="default-select">Любой</option>
-            <option value="Мужской">Мужской</option>
-            <option value="Женский">Женский</option>
+            <option value="" disabled id="default-select">Any</option>
+            <option value="Мужской">Men</option>
+            <option value="Женский">Women</option>
           </select>
         </div>
       </div>
 
       <div className='input-field col s8 offset-s2'>
         <input
-          placeholder="Ваш город"
+          placeholder='Your city'
           id='city'
           type='text'
           name='city'
@@ -101,12 +101,12 @@ export const Form = ({ profile, isEdit }) => {
           onChange={changeHandler}
           disabled={loading}
         />
-        <label htmlFor="city">Введите город</label>
+        <label htmlFor="city">Enter city</label>
       </div>
 
       <div className='input-field col s8 offset-s2'>
         <input
-          placeholder='Введите дату рождения'
+          placeholder='Your Birthday'
           name='birthday'
           id='birthday'
           type='text'
@@ -114,16 +114,16 @@ export const Form = ({ profile, isEdit }) => {
           defaultValue={ form.birthday || ''}
           ref={birthDate}
         />
-        <label htmlFor='birthday'>Введите дату рождения</label>
+        <label htmlFor='birthday'>Enter BirthDate</label>
       </div>
 
       <div className="bottom-row col s4 offset-s4">
         <a className="waves-effect waves-light btn-flat reset-button"
-          onClick={resetHandler}>Сбросить</a>
+          onClick={resetHandler}>Reset</a>
         {!isEdit && <a className="waves-effect waves-light btn grey accent-4 search-button"
-          onClick={createProfile}>Создать</a>}
+          onClick={createProfile}>Create</a>}
         {isEdit && <a className="waves-effect waves-light btn grey accent-4 search-button"
-          onClick={() => updateHandler(profile._id)}>Изменить</a>}
+          onClick={() => updateHandler(profile._id)}>Update</a>}
       </div>
     </>
   )

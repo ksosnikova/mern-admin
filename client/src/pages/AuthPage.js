@@ -44,7 +44,7 @@ export const AuthPage = () => {
         <h3>crud</h3>
         <div className="card teal darken-1">
           <div className="card-content white-text">
-            <span className="card-title">Авторизация</span>
+            <span className="card-title">Authorization</span>
 
             <div className="input-field">
             <input 
@@ -81,12 +81,12 @@ export const AuthPage = () => {
             className='btn deep-orange darken-1'
             onClick={loginHandler}
             disabled={loading}
-            >Войти</button>
+            >Login</button>
            <button 
             className='btn grey lighten-2 black-text'
             onClick={registerHandler}
             disabled={loading}
-            >Регистрация</button>
+            >Registration</button>
           </div>
         </div>
       </div>

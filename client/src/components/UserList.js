@@ -8,11 +8,11 @@ export const UserList = ({ users, deleteUser, changeUserType }) => {
     <thead>
       <tr>
         <th>#</th>
-        <th>имейл</th>
+        <th>email</th>
         {/* <th>профили</th> */}
-        <th>тип аккаунта</th>
-        <th>изменить</th>
-        <th>удалить</th> 
+        <th>account type</th>
+        <th>edit</th>
+        <th>delete</th> 
       </tr>
     </thead>
 
@@ -23,9 +23,9 @@ export const UserList = ({ users, deleteUser, changeUserType }) => {
             <td>{index + 1}</td>
             <td>{user.email}</td>
             {/* <td><Link to={`api/profiles/${user._id}`}>профили</Link></td> */}
-            <td>{user.isAdmin ? 'админ' : 'пользователь'}</td>
+            <td>{user.isAdmin ? 'admin' : 'user'}</td>
             <td>
-              <a onClick={() => changeUserType(user._id)}>сделать { user.isAdmin ? 'пользователем' : 'админом'}</a>
+              <a onClick={() => changeUserType(user._id)}>make { user.isAdmin ? 'user' : 'admin'}</a>
             </td>
             <td>
               <a><i className="material-icons prefix" onClick={() => deleteUser(user._id)}>delete_forever</i></a>
